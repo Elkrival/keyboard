@@ -12,7 +12,6 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      song: "",
       e3: 164.814,//a
       f3: 174.614,//s
       g3: 195.998,//d
@@ -135,8 +134,7 @@ class App extends Component {
                c: 261.6,
                a: 440
            },
-          //  song = "cfefcc-fff-abb-=afefaaccffgfe---";
-          song = this.setState({song: event.target.value})
+           song = "cfefcc-fff-abb-=afefaaccffgfe---";
        setInterval(play, 1000 / 4);
 
        function createOscillator(freq) {
@@ -166,12 +164,7 @@ class App extends Component {
        }
     }
   render() {
-    var surfaceWidth = '400px';
-   var surfaceHeight = '400px';
-    const positionY = this.state.positionY;
-    const positionX = this.state.positionX;
     return (
-
         <div className="App" onKeyDown={(()=> this.handleKeyDown())} >
           <input onChange={(e) => this.setState.handleSong(e)}/>
           <button onClick={(() => this.handleSong())}>Beep</button>
